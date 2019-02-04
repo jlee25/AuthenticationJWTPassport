@@ -24,12 +24,12 @@ app.use(bodyParser.json({ type:'*/*'})); // express middleware. Used to parse in
 router(app);
 
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname + '/client/build/index.html'));
+  res.sendFile(path.join(__dirname, '/client/build/index.html'));
 });
 
 // Server Setup
 
-const port = process.env.PORT || 3090;
+const port = process.env.PORT || 5000;
 const server = http.createServer(app);
 server.listen(port);
 console.log('Server Listening on:', port);
