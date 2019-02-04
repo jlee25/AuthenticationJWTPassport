@@ -1,0 +1,72 @@
+.welcomeContainer {
+  display: flex;
+  flex-direction: column;
+  height: 94.7vh;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient( rgba(0,0,0,0.4), rgba(0, 0, 0, 0.4) ), url('../assets/main2.jpg') no-repeat center;
+  background-size: cover;
+  color: white;
+}
+
+.wrapper {
+  max-width: 1200px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.welcomeContainer h1 {
+  font-size: 60px;
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.welcomeContainer h2 {
+  font-size: 40px;
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.welcomeContainer form {
+  display: flex;
+  flex-direction: column;
+}
+
+.welcomeContainer input[type=text] {
+  width: 60%;
+  margin: 0 auto;
+  padding: 10px;
+  font-size: 20px;
+  border: 3px solid green;
+  border-radius: 10px;
+}
+
+button {
+  padding: 10px;
+  border-radius: 10px;
+  width: 200px;
+  margin: 10px auto 0;
+  border: none;
+  background-color: green;
+  color: white;
+  transition: all .2s ease-in-out;
+  font-family: 'Cormorant Garamond', serif;
+}
+
+button:hover {
+  filter: brightness(70%);
+}
+
+@media (max-width: 500px) {
+  .welcomeContainer h1 {
+    font-size: 40px;
+  }
+  .welcomeContainer h2 {
+    font-size: 24px;
+  }
+  .wrapper {
+    padding: 0 20px;
+  }
+  .welcomeContainer input[type=text] {
+    width: 200px;
+  }
+}

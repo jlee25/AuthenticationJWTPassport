@@ -1,0 +1,17 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  background-color: green;
+  padding: 10px;
+}
+
+.header a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: white;
+  transition: all .3s ease-in-out;
+}
+
+.header a:hover {
+  color: #7FFF00
+}

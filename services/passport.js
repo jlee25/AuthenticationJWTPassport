@@ -1,7 +1,7 @@
 // passport helps authenticate users
 const passport = require('passport');
 const User = require('../models/user');
-const config = require('../config');
+const config = require("../config") || process.env.secret;
 const JwtStrategy = require('passport-jwt').Strategy; // methods for authenticating user
 const ExtractJwt = require('passport-jwt').ExtractJwt;
 const LocalStrategy = require('passport-local');
