@@ -17,8 +17,9 @@ app.get('*', (req, res) => {
 })
 
 // DB Setup
-mongoose.connect(
-  "mongodb://jefflee:testing1@ds119085.mlab.com:19085/recipes",
+
+const DBURI = process.env.MONGODB_URI || "mongodb://jefflee:testing1@ds119085.mlab.com:19085/recipes";
+mongoose.connect(DBURI ,
   { useNewUrlParser: true }
 );
 
