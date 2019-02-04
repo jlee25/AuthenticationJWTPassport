@@ -17,8 +17,8 @@ mongoose.connect(
 // App Setup
 
 app.use(express.static(path.join(__dirname, "client/public")));
-app.get("*", function (req, res) {
-  res.sendFile(__dirname, "client", "public", "index.html");
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname + '/client/build/index.html'));
 });
 
 app.use(morgan('combined')); // express middleware. Morgan is a logging framework
@@ -28,7 +28,7 @@ router(app);
 
 // Server Setup
 
-const port = process.env.PORT || 3090;
+const port = process.env.PORT || 5000;
 const server = http.createServer(app);
 server.listen(port);
 console.log('Server Listening on:', port);
