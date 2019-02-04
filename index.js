@@ -16,7 +16,10 @@ mongoose.connect(
 
 // App Setup
 
-app.use(express.static(path.join(__dirname, "client/build")));
+app.use(express.static(path.join(__dirname, "client/public")));
+app.get("*", function (req, res) {
+  res.sendFile(__dirname, "client", "public", "index.html");
+});
 
 app.use(morgan('combined')); // express middleware. Morgan is a logging framework
 app.use(cors());
