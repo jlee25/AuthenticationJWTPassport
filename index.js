@@ -16,19 +16,20 @@ mongoose.connect(
 
 // App Setup
 
-app.use(express.static(path.join(__dirname, "client/public")));
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname + '/client/build/index.html'));
-});
+app.use(express.static(path.join(__dirname, "client/build")));
 
 app.use(morgan('combined')); // express middleware. Morgan is a logging framework
 app.use(cors());
 app.use(bodyParser.json({ type:'*/*'})); // express middleware. Used to parse incoming requests into json, no matter what the request type is.
 router(app);
 
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname + '/client/build/index.html'));
+});
+
 // Server Setup
 
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 3090;
 const server = http.createServer(app);
 server.listen(port);
 console.log('Server Listening on:', port);
