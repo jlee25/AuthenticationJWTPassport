@@ -1,4 +1,5 @@
 const express = require('express');
+const path = require("path");
 const http = require ('http');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
@@ -14,6 +15,8 @@ mongoose.connect(
 );
 
 // App Setup
+
+app.use(express.static(path.join(__dirname, "client/build")));
 
 app.use(morgan('combined')); // express middleware. Morgan is a logging framework
 app.use(cors());
