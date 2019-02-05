@@ -31,10 +31,9 @@ app.use(cors());
 app.use(bodyParser.json({ type:'*/*'})); // express middleware. Used to parse incoming requests into json, no matter what the request type is.
 router(app);
 
-
 // Server Setup
 
-const port = process.env.PORT || 3090;
-const server = http.createServer(app);
-server.listen(port);
-console.log('Server Listening on:', port);
+const port = process.env.PORT || 5000;
+app.listen(port, (req, res) => {
+  console.log(`server listening on port: ${port}`);
+});
